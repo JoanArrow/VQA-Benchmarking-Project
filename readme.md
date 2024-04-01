@@ -5,7 +5,7 @@
 ### (Q1) How close are Near-term Intermediate Scale Quantum (NISQ) applications to quantum advantage? 
 ### (Q2) How can we develop clear and accessible benchmarks of Variational Quantum Algorithm (VQA) performance that can be compared across applications and that are operationally meaningful to the widest possible audience of end-users?
 
-#### This is an open-source repository developed with funding from the Center for Quantum Networks to address these questions via our application-based, oprationally meaningful benchmarks that endeavor to assess VQA performance in a series of noisy environments. 
+#### To address these questions we have developed novel application-based, oprationally meaningful benchmarks that enable VQA performance comparison across applications and calculates a heuristic for the proximity of a given VQA application to quantum advantage.
 #### Through our partnership with Metriq, we hope that community members will add their own implementations of the many different VQAs to more fully benchmark the performance of NISQ algorithms.
 
 ##### For detailed information on our novel benchmarking approach, please refer to (https://docs.google.com/presentation/d/1DIuKx0fu_Yc2wbYRbZcZio9xHG0sk4zKP9gaDoP9BS8/edit?usp=sharing) - arXiv preprint coming soon!
