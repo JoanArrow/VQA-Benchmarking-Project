@@ -1,6 +1,8 @@
 # Welcome to the VQA Benchmarking Project! (beta)
 
-## The VQA Benchmarking Project is an open-source initative that, through our partnership with Metriq (https://metriq.info/VQA), endeavors to construct a robust benchmarking suite of all Variational Quantum Algorithms that answers the following questions:
+## 
+
+The VQA Benchmarking Project is an open-source initative that, through our partnership with Metriq (https://metriq.info/VQA), endeavors to construct a robust benchmarking suite of all Variational Quantum Algorithms that answers the following questions:
 
 ### (Q1) How close are Near-term Intermediate Scale Quantum (NISQ) algorithms such as VQAs to quantum advantage? 
 ### (Q2) How can we develop clear and accessible benchmarks of Variational Quantum Algorithm (VQA) performance that can be compared across applications and that are operationally meaningful to the widest possible audience of end-users?
