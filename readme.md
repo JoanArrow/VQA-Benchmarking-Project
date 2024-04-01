@@ -1,15 +1,17 @@
-# Welcome to the Q-SEnSE Hackethon!
+# Welcome to the VQA Benchmarking Project!
 
-### Follow these instructions to learn how you can participate in this hackathon and submit solutions to our challenges
+### How close are Near-term Intermediate Scale Quantum (NISQ) applications to quantum advantage? How can we develop clear and accessible benchmarks of Variational Quantum Algorithm (VQA) performance that can be compared across applications and that are operationally meaningful to the widest possible audience of end-users?
 
-##### 1. All challenges are contained on this repo as jupiter notebooks. Your first step in participating in this hackathon is to fork this repo to make your own copy of all challenges.
+### This is an open-source repository developed with funding from the Center for Quantum Networks to address these questions via our application-based, oprationally meaningful benchmarks that endeavor to assess VQA performance in a series of noisy environments. Through our partnership with Metriq, we hope that community members will add their own implementations of the many different VQAs to more fully benchmark the performance of NISQ algorithms.
 
-##### 2. Once you have your own fork, select a challenge you would like to attempt by downloading that challenge's notebook onto your device.
+### For detailed information on our novel benchmarking approach, please refer to (https://docs.google.com/presentation/d/1DIuKx0fu_Yc2wbYRbZcZio9xHG0sk4zKP9gaDoP9BS8/edit?usp=sharing) - arXiv preprint coming soon!
 
-##### 3. Now it's time to get hacking! Each notebook contains helpful resources to help you get started. Develop your solution to the challenge and store your working code in the downloaded notebook for the challenge (you may have to create new code fields in the notebook bellow the instructions and examples).
+#### Users can add to this growing project repo by running one of our initial implementations of the Variational Quantum Linear Solver (VQLS), Variational Quantum State Diagonalization (VQSD) Algorithm, Adiabatically Assisted Variational Quantum Eigensolver (AAVQE), or the Quantum Approximate Boltzman Machine (QABoM). In addition, users can add to this repo by implementing a new VQA and benchmarking it's performance in the following set of noisy environments:
 
-##### 4. Once you are ready to submit your code, initiate a pull request which will propose as a solution to the challenge your updated version of the notebook containing your working code.
-
-##### 5. Solutions will be judged by someone representing the sponsor that submitted the challenge. A submission will be ranked by the quality of the code which endeavors to solve the challenge and the time that it was submitted (with two equivalent submissions being distinguished by which was submitted first).
+##### 1. Noiseless simulator
+##### 2. Bit flip noise model (bit flip probability p = 0.05)
+##### 3. Device inspired noise model (e.g. IBM's FakeManilla noise simulator)
+##### 4. Noisy quantum devices (IBM, Rigetti, IonQ, etc.)
     
-## Many thanks to Nvidia and Infleqtion for sponsoring this amazing event!
+## Please keep in mind that this repo is currently in beta! 
+### We welcome any and all feedback as we prepare for the official launch in the coming weeks.
