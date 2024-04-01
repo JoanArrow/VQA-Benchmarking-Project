@@ -13,10 +13,10 @@ Through our partnership with Metriq, we hope that community members will add the
 For detailed information on our novel benchmarking approach, please refer to (https://docs.google.com/presentation/d/1DIuKx0fu_Yc2wbYRbZcZio9xHG0sk4zKP9gaDoP9BS8/edit?usp=sharing) - arXiv preprint coming soon!
 
 Users can add to this growing project repo by running one of our initial implementations of the Variational Quantum Linear Solver (VQLS), Variational Quantum State Diagonalization (VQSD) Algorithm, Adiabatically Assisted Variational Quantum Eigensolver (AAVQE), or the Quantum Approximate Boltzman Machine (QABoM). In addition, users can add to this repo by implementing a new VQA and benchmarking it's performance in the following set of noisy environments:
-    1. Noiseless simulator
-    2. Bit flip noise model (bit flip probability p = 0.05)
-    3. Device inspired noise model (e.g. IBM's FakeManilla noise simulator)
-    4. Noisy quantum devices (IBM, Rigetti, IonQ, etc.)
+-- 1. Noiseless simulator
+-- 2. Bit flip noise model (bit flip probability p = 0.05)
+-- 3. Device inspired noise model (e.g. IBM's FakeManilla noise simulator)
+-- 4. Noisy quantum devices (IBM, Rigetti, IonQ, etc.)
     
 ## Please keep in mind that this repo is currently in beta! 
 ### We welcome any and all feedback as we prepare for the official launch in the coming weeks.
