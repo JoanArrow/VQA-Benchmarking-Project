@@ -170,14 +170,16 @@ class VQSD(VQA):
         error = []
         diag = []
         Ev = []
+        system_size = 2*self.qubits
 
         diag = [self.run(theta)]
         Ev = [self.eval_readout(theta)]
 
         opt = qml.GradientDescentOptimizer(stepsize=step)
         #try ADAM
-        max_iterations = 1000
-        conv_tol = 1e-03
+        max_iterations = 1000000000
+        max_time = 18000
+        conv_tol = 1.6e-03
         start_time = time.time()
 
         print("\n" f"initial value of the circuit parameter = {angle[0]}")
@@ -189,13 +191,18 @@ class VQSD(VQA):
             angle.append(theta)
             Ev = np.vstack((Ev, self.eval_readout(theta)))
             conv = 1 - max(Ev[-1,:])
-            error.append(conv)         
+            error.append(conv.numpy())
+            Time = time.time() - start_time
 
             if n % 10 == 0:
                 print(f"Step = {n},  Diagonality = {diag[-1]:.8f}, Eigen_Values = {Ev[-1]}")
             
-            if n == max_iterations:
-                print("\n"f"Max iterations = {max_iterations}")
+            #if n == max_iterations:
+            #    print("\n"f"Max iterations = {max_iterations}")
+            #    break
+
+            if Time >= max_time:
+                print("\n"f"Max iterations = {n}")
                 break
     
             if round(conv.item(), 3) <= conv_tol:
@@ -217,21 +224,21 @@ class VQSD(VQA):
         fig.set_figwidth(12)
         
         data = {
-        #    "n_qubits": self.qubits, 
-           "cost_history": diag, 
-        #    "error_history": error,
-           "ansatz": f"Single Layer Simplified 2-Design",
-           "cost": f"Global",
-           "optimizer": '{opt}',
-           "error_threshold": conv_tol,
-           #"noise_model": noise,
-           "Time to Solution": Time,
-           "Iterations to Solution": max_iterations,
-           "Final Error": conv.item(),
-           "Optimal_weights": list(angle[-1].numpy()),
-           "Initial_weights": list(angle[0].numpy())
-        }
-        print(data)
+            "n_qubits": system_size, 
+            "cost_history": diag, 
+            "error_history": str(error),
+            "ansatz": f"Single Layer Simplified 2-Design",
+            "cost": f"Global",
+            "optimizer": f"{opt}",
+            "step size": step,
+            "error_threshold": conv_tol,
+            "noise_model": 'none',
+            "Time to Solution": Time,
+            "Iterations to Solution": max_iterations,
+            "Final Error": str(conv),
+            "Optimal_weights": str(angle[-1]),
+            "Initial_weights": str(angle[0])
+            }
         
         with open(f"VQSD/data/fakemanila/VQSD_{self.qubits}_FakeManila_{self.trial}.json", 'a') as outfile:
            json.dump(data, outfile)
