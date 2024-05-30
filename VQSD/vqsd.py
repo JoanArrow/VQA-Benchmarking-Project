@@ -268,6 +268,6 @@ class VQSD(VQA):
 
 # %%
 
-for i in range(1,2):
+for i in range(2,5):
     z = VQSD(2, 100, i)
     z.opt(0.1)
