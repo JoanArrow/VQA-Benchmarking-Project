@@ -9,8 +9,6 @@ as described in [ADD PAPER] ------------------------------------------------
 import pennylane as qml
 from pennylane import numpy as np
 from pennylane import qaoa
-from qiskit_ibm_runtime.fake_provider import FakeManila
-import qiskit_aer
 import copy
 import json
 import time
@@ -21,7 +19,7 @@ class qRBM:
     desc
     """
 
-    def __init__(self, num_visible, num_hidden, device_name, beta_temp=2.0, optimizer_steps=70, bitFlipNoise=False, device_backend=""):
+    def __init__(self, num_visible, num_hidden, device_name, beta_temp=2.0, optimizer_steps=70, bitFlipNoise=False):
         """
         Constructor for the qRBM
         :param num_visible:
@@ -76,11 +74,7 @@ class qRBM:
         # Initializing the full cost Hamiltonian
         self.updateHamiltonians()
 
-        # Setting up the device to be used
-        if device_backend != "":
-            self.device = qml.device(device_name, wires=(self.num_total + self.num_ancillaries), backend=device_backend)
-        else:
-            self.device = qml.device(device_name, wires=(self.num_total + self.num_ancillaries))
+        self.device = qml.device(device_name, wires=(self.num_total + self.num_ancillaries))
 
 
     def updateHamiltonians(self):
