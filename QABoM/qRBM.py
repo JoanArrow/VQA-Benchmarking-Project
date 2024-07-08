@@ -127,7 +127,7 @@ class qRBM:
             qml.CNOT([anc, node])
 
         # Layer the QAOA circuit
-        # Currently using depth=2                                                                      REVIEW??????????
+        # Currently using depth=2                                                                      
         qml.layer(self.unclamped_qaoa_layer, depth=2, gamma=params[0], nu=params[1])
 
 
@@ -206,7 +206,7 @@ class qRBM:
 
         # ERRORS
 
-        # Initial gamma and nu                                                                   UPDATE TO RANDOMIZE???
+        # Initial gamma and nu                                                                   
         gamma = np.random.rand()
         nu = np.random.rand()
         params = [gamma, nu]
