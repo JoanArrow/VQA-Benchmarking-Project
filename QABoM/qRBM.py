@@ -12,6 +12,7 @@ from pennylane import qaoa
 import copy
 import json
 import time
+from qiskit.providers.fake_provider import *
 
 
 class qRBM:
@@ -74,7 +75,12 @@ class qRBM:
         # Initializing the full cost Hamiltonian
         self.updateHamiltonians()
 
-        self.device = qml.device(device_name, wires=(self.num_total + self.num_ancillaries))
+        # self.device = qml.device(device_name, wires=(self.num_total + self.num_ancillaries))
+
+        def configured_backend():
+            backend = FakeManila()
+            return backend
+        self.device = qml.device("qiskit.remote", wires=(self.num_total + self.num_ancillaries), backend=configured_backend())
 
 
     def updateHamiltonians(self):
@@ -286,6 +292,8 @@ class qRBM:
             hellinger_check = hsum
 
             epoch_index += 1
+            print(f"{epoch_index=}")
+            print(f"{hsum=}")
             current_time = time.time()
 
         # End of training loop
@@ -313,8 +321,10 @@ class qRBM:
         with open("final_transformed.txt", 'w') as f:
             json.dump(tdata, f, indent=4)
 
-        print("Training done in ", epoch_index, " epochs")
-        print("Time taken for training: ", end - start, " seconds")
+        with open("data/logs.txt", "a") as f:
+            f.write(f"\n\n\n\n{self.num_total*2} qubits")
+            f.write(f"\nTraining done in {epoch_index} epochs")
+            f.write(f"\nTime taken for training: {end - start} seconds")
         #print(self.hellinger)
 
 
