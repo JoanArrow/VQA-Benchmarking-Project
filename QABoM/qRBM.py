@@ -304,21 +304,21 @@ class qRBM:
         # Extract the values from the objects in the hellinger list
         for value in self.hellinger:
             hdata.append(value.item())
-        with open("hellinger_results.txt", 'w') as f:
+        with open("hellinger_results.txt", 'a') as f:
             json.dump(hdata, f, indent=4)
 
         # Extract the values from the cost function list
         CFdata = []
         for value in self.CF:
             CFdata.append(value.item())
-        with open("costfunction_results.txt", 'w') as f:
+        with open("costfunction_results.txt", 'a') as f:
             json.dump(CFdata, f, indent=4)
 
         # Store the final values
         tdata = []
         for value in temp_transformed:
             tdata.append(value.item())
-        with open("final_transformed.txt", 'w') as f:
+        with open("final_transformed.txt", 'a') as f:
             json.dump(tdata, f, indent=4)
 
         with open("data/logs.txt", "a") as f:
