@@ -25,3 +25,15 @@ Time taken for training: 15028.510137081146 seconds
 4 qubits
 Training done in 286 epochs
 Time taken for training: 14437.30030798912 seconds
+
+
+
+4 qubits
+Training done in 286 epochs
+Time taken for training: 14051.040524244308 seconds
+
+
+
+4 qubits
+Training done in 286 epochs
+Time taken for training: 12466.053838968277 seconds
