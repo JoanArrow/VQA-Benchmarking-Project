@@ -2,7 +2,7 @@
 # ## Smallest qRBM case code to run tests
 
 # %%
-from qRBM import qRBM
+from qRBM import qRBM          
 import pennylane as qml
 import numpy as np
 
